@@ -1,2 +1,3 @@
-.TaskCell {
+.TaskCell--completed {
+    opacity: 0.2;
 }
