@@ -47,6 +47,21 @@
                 "value": {"<-": "@tasksController.organizedContent.filter{!completed}.length"}
             }
         },
+        "clearCompletedButton": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "clearCompletedButton"},
+                "enabled": true,
+                "label": "Clear Completed"
+            },
+            "listeners": [
+                {
+                    "type": "action",
+                    "useCapture": false,
+                    "listener": {"@": "owner"}
+                }
+            ]
+        },
         "taskCell": {
             "prototype": "ui/task-cell.reel",
             "properties": {
@@ -82,7 +97,10 @@
         <button data-montage-id="addTaskButton">
 
         </button>
-        <output data-montage-id="badge"></output>
+        <output data-montage-id="badge">
+
+        </output>
+        <button data-montage-id="clearCompletedButton"></button>
         <ul data-montage-id="taskList">
             <li data-montage-id="taskCell">
                 Item

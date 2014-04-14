@@ -13,5 +13,14 @@ exports.Main = Component.specialize(/** @lends Main# */ {
         value: function Main() {
             this.super();
         }
+    },
+
+    handleClearCompletedButtonAction: {
+        value: function (evt) {
+            var tasksController = this.templateObjects.tasksController,
+                completedTasks = tasksController.getPath("content.filter{completed}");
+
+            tasksController.deleteEach(completedTasks);
+        }
     }
 });
