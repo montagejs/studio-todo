@@ -51,8 +51,11 @@
             "prototype": "digit/ui/button.reel",
             "properties": {
                 "element": {"#": "clearCompletedButton"},
-                "enabled": true,
+                "enabled": false,
                 "label": "Clear Completed"
+            },
+            "bindings": {
+                "enabled": {"<-": "@tasksController.content.filter{completed}.length > 0"}
             },
             "listeners": [
                 {
